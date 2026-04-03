@@ -40,9 +40,15 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Crawl nội dung tham khảo (5sao.com.vn)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Trang marketing đọc snapshot JSON trong `content/crawled/`. Để **làm mới** nội dung sau khi site nguồn thay đổi:
+
+```bash
+npm run crawl
+```
+
+Lệnh gọi `scripts/crawl-pages.ts` (cần mạng), ghi `content/crawled/pages/*.json` và `manifest.json`. Sau đó commit các file JSON nếu muốn build/CI **không** phụ thuộc crawl. Tuân thủ `robots.txt` và điều khoản site nguồn khi chạy tự động thường xuyên.
 
 ## Deploying To Production
 

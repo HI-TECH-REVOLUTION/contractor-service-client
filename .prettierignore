@@ -1,0 +1,12 @@
+.next
+node_modules
+env.d.ts
+out
+dist
+build
+coverage
+.open-next
+.wrangler
+package-lock.json
+*.min.js
+*.min.css

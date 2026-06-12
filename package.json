@@ -55,9 +55,11 @@
 	},
 	"private": true,
 	"scripts": {
-		"build": "next build",
+		"build": "next build && opennextjs-cloudflare build --skipNextBuild",
+		"build:next": "next build",
+		"build:worker": "opennextjs-cloudflare build",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts",
-		"check": "npm run build && tsc",
+		"check": "npm run build:next && tsc",
 		"deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
 		"dev": "next dev",
 		"format": "prettier --write .",
